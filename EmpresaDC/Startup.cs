@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ImportacionesDC.Models.Abstract;
 using ImportacionesDC.Models.Business;
 using ImportacionesDC.Models.DAL;
+using Libras.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -36,6 +37,7 @@ namespace ImportacionesDC
             services.AddScoped<ITransportadoraBusiness, TransportadoraBusiness>();
             services.AddScoped<ITipoMercanciaBusiness, TipoMercanciaBusiness>();
             services.AddScoped<IEstadosBusiness, EstadosBusiness>();
+            services.AddScoped<ILibrasBussines, LibrasBusiness>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

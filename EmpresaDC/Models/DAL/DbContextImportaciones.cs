@@ -1,4 +1,5 @@
 ﻿using ImportacionesDC.Models.Entities;
+using Libras.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,5 +19,6 @@ namespace ImportacionesDC.Models.DAL
         public DbSet<Transportadora> transportadoras { get; set; }
         public DbSet<TipoMercancia> mercancias { get; set; }
         public DbSet<Estado> estados { get; set; }    
+        public DbSet<Libra> Libra { get; set; }
     }
 }
