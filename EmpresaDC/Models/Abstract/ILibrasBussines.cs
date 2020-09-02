@@ -7,7 +7,7 @@ namespace Libras.Models
 {
     public interface ILibrasBussines
     {
-        Task<Libra> ObtenerUltimaLibra();
+        Libra ObtenerUltimaLibra();
         Task Eliminar(Libra libra);
         Task CrearEditar(Libra libra);
         Task<Libra> ObtenerLibraPorId(int? id);

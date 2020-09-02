@@ -77,11 +77,11 @@ namespace Libras.Models
                throw new Exception();
             }
         }
-        public async Task<Libra> ObtenerUltimaLibra()
+        public Libra ObtenerUltimaLibra()
         {
             try
             {
-                Libra libra = await _context.Libra.MaxAsync();
+                Libra libra =  _context.Libra.OrderByDescending(x => x.IdLibra).First();
                 return libra;
                
             }
