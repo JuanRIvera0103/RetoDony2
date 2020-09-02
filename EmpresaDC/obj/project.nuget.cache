@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Dcykabo1m1GAsf2w+bzk/iCaY1eOizBlu87YVH3uoFHfA5ebFRcRcN54AK1bCwQWc9h/k+u/KZQnqtd+i8V2cA==",
+  "dgSpecHash": "d2ft4SazwNI54G0keljeP7i0/qMboznoD/9xAaEB4zadGFMHieJWEA50EAuJY7SdW6toYsTQg3Igr6rz/zEqmw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\RYZEN 3\\source\\repos\\RetoDony2\\EmpresaDC\\EmpresaDC.csproj",
+  "projectFilePath": "C:\\Users\\RYZEN 3\\Source\\Repos\\RetoDony2\\EmpresaDC\\EmpresaDC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\RYZEN 3\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\RYZEN 3\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

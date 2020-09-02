@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\RYZEN 3\\source\\repos\\RetoDony2\\EmpresaDC\\EmpresaDC.csproj": {}
+    "C:\\Users\\RYZEN 3\\Source\\Repos\\RetoDony2\\EmpresaDC\\EmpresaDC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\RYZEN 3\\source\\repos\\RetoDony2\\EmpresaDC\\EmpresaDC.csproj": {
+    "C:\\Users\\RYZEN 3\\Source\\Repos\\RetoDony2\\EmpresaDC\\EmpresaDC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RYZEN 3\\source\\repos\\RetoDony2\\EmpresaDC\\EmpresaDC.csproj",
+        "projectUniqueName": "C:\\Users\\RYZEN 3\\Source\\Repos\\RetoDony2\\EmpresaDC\\EmpresaDC.csproj",
         "projectName": "EmpresaDC",
-        "projectPath": "C:\\Users\\RYZEN 3\\source\\repos\\RetoDony2\\EmpresaDC\\EmpresaDC.csproj",
+        "projectPath": "C:\\Users\\RYZEN 3\\Source\\Repos\\RetoDony2\\EmpresaDC\\EmpresaDC.csproj",
         "packagesPath": "C:\\Users\\RYZEN 3\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RYZEN 3\\source\\repos\\RetoDony2\\EmpresaDC\\obj\\",
+        "outputPath": "C:\\Users\\RYZEN 3\\Source\\Repos\\RetoDony2\\EmpresaDC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\RYZEN 3\\AppData\\Roaming\\NuGet\\NuGet.Config",
