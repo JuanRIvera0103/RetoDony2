@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ImportacionesDC.Clases.PaqueteDetalle>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Codigo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Peso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Casillero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                <a asp-action="CrearEditar" class="btn btn-outline-success"><i class="fas fa-plus"></i> Nuevo Paquete</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                MIA-@Html.DisplayFor(modelItem => item.Codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Peso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Casillero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                <a asp-action="CrearEditar" asp-route-id="@item.Codigo" class="btn btn-outline-warning"><i class="fas fa-edit"></i> Editar</a>
+                <a asp-action="Detalle" asp-route-id="@item.Codigo" class="btn btn-outline-primary"><i class="fas fa-search-plus"></i> Detalles</a>
+                <a asp-action="Eliminar" onclick="return confirm('¿Estas seguro de eliminar este elemento?')" asp-route-id="@item.Codigo" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i> Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

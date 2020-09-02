@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ImportacionesDC.Models.Entities.Cliente>
+
+@{
+    ViewData["Title"] = "Clientes";
+}
+
+<h1>Clientes</h1>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Correo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </th>
+            <th>
+                <a asp-action="CrearEditar" class="btn btn-outline-success"><i class="fas fa-plus"></i> Nuevo Cliente</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Correo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                <a asp-action="CrearEditar" asp-route-id="@item.NumeroCasillero" class="btn btn-outline-warning"><i class="fas fa-edit"></i> Editar</a> 
+                <a asp-action="Detalle" asp-route-id="@item.NumeroCasillero" class="btn btn-outline-primary"><i class="fas fa-search-plus"></i> Detalles</a> 
+                <a asp-action="Eliminar" onclick="return confirm('¿Estas seguro de eliminar este elemento?')" asp-route-id="@item.NumeroCasillero" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i> Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

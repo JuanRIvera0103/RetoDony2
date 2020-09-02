@@ -1,0 +1,23 @@
+﻿body{
+    overflow: hidden;    
+    font-weight: 300;
+    
+}
+
+.bg-primary{
+    background-color: #111111;
+}
+
+#sidebar-container{
+    min-height: 100vh;
+}
+
+#sidebar-container .logo{
+    padding: .873rem 1.25rem;
+}
+#sidebar-container .menu{
+    width: 18rem;
+}
+#contenido{
+    margin-left: 10%;
+}

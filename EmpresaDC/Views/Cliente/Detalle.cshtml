@@ -1,0 +1,90 @@
+﻿@model ImportacionesDC.Models.Entities.Cliente
+
+@{
+    ViewData["Title"] = "Detalle";
+    IEnumerable<ImportacionesDC.Models.Entities.Paquete> items =
+    (IEnumerable<ImportacionesDC.Models.Entities.Paquete>)ViewBag.Paquetes;
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NumeroCasillero)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NumeroCasillero)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Correo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Correo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+    </dl>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Peso)*@
+                codigo
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Casillero)*@
+                peso
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Casillero)*@
+                casillero
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Estado)*@
+                estado
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in items)
+        {
+            <tr>
+                <td>
+                    MIA-@Html.DisplayFor(modelItem => item.Codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Peso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Casillero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+                <td>
+                    <a asp-action="CrearEditar" asp-route-id="@item.Codigo" class="btn btn-outline-warning"><i class="fas fa-edit"></i> Editar</a>
+                    <a asp-action="Detalle" asp-route-id="@item.Codigo" class="btn btn-outline-primary"><i class="fas fa-search-plus"></i> Detalles</a>
+                    <a asp-action="Eliminar" onclick="return confirm('¿Estas seguro de eliminar este elemento?')" asp-route-id="@item.Codigo" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i> Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-action="CrearEditar" asp-route-id="@Model.NumeroCasillero">Editar</a> |
+    <a asp-action="Index">Volver al menu</a>
+</div>

@@ -3,15 +3,43 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - EmpresaDC</title>
+    <title>@ViewData["Title"] - ImportacionesDC</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css"/>
+    <link rel="stylesheet" href="~/css/menu.css" />
 </head>
 <body>
-    <header>
+    <div class="d-flex">
+        <div id="sidebar-container" class="bg-primary">
+            <div class="logo">
+                <a class="text-light font-weight-bold" asp-area="" asp-controller="Cliente" asp-action="Index">ImportacionesDC</a>
+            </div>
+            <div class="menu">
+                <a class="d-block text-light p-3 " asp-area="" asp-controller="Cliente" asp-action="Index"><i class="far fa-user p-2 lead"></i>Clientes</a>
+                <a class="d-block text-light p-3" asp-area="" asp-controller="Paquete" asp-action="Index"><i class="far fa-archive p-2 lead"></i>Paquetes</a>
+                <a class="d-block text-light p-3" asp-area="" asp-controller="Estados" asp-action="Index"><i class="far fa-archive p-2 lead"></i>Estados</a>
+                <a class="d-block text-light p-3 " asp-area="" asp-controller="TipoMercancias" asp-action="Index"><i class="far fa-user p-2 lead"></i>Tipo Mercancia</a>
+                <a class="d-block text-light p-3" asp-area="" asp-controller="Transportadoras" asp-action="Index"><i class="far fa-archive p-2 lead"></i>Transportadoras</a>
+            </div>
+        </div>
+        <div id="contenido">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    @*<header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">EmpresaDC</a>
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -19,25 +47,26 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-    </header>
-    <div class="container">
+        <div class="bloque">Hola</div>
+    </header>*@
+    @*<div class="container" id="contenido">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-    </div>
+    </div>*@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - EmpresaDC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2020 - ImportacionesDC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
