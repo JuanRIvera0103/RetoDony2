@@ -2,6 +2,7 @@
 using ImportacionesDC.Models.Abstract;
 using ImportacionesDC.Models.DAL;
 using ImportacionesDC.Models.Entities;
+using Libras.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -75,8 +76,7 @@ namespace ImportacionesDC.Models.Business
         }
 
         public async Task GuardarEditarPaquete(Paquete paquete)
-        {
-
+        {            
             try
             {
                 if (paquete.Codigo == 0)
@@ -123,6 +123,22 @@ namespace ImportacionesDC.Models.Business
         {
             return await _context.mercancias.ToArrayAsync();
         }
+        public async Task<Libra> ObtenerUltimaLibra()
+        {
+            try
+            {
+                Libra libra = await _context.Libra.MaxAsync();
+                return libra;
+
+            }
+            catch (Exception)
+            {
+
+                throw new Exception();
+            }
+        }
+
+
 
     }
 }

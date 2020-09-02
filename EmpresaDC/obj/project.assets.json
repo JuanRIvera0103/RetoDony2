@@ -5721,19 +5721,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\RYZEN 3\\.nuget\\packages\\": {}
+    "C:\\Users\\higui\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\RYZEN 3\\Source\\Repos\\RetoDony2\\EmpresaDC\\EmpresaDC.csproj",
+      "projectUniqueName": "C:\\Users\\higui\\source\\repos\\EmpresaDC\\EmpresaDC\\EmpresaDC.csproj",
       "projectName": "EmpresaDC",
-      "projectPath": "C:\\Users\\RYZEN 3\\Source\\Repos\\RetoDony2\\EmpresaDC\\EmpresaDC.csproj",
-      "packagesPath": "C:\\Users\\RYZEN 3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\RYZEN 3\\Source\\Repos\\RetoDony2\\EmpresaDC\\obj\\",
+      "projectPath": "C:\\Users\\higui\\source\\repos\\EmpresaDC\\EmpresaDC\\EmpresaDC.csproj",
+      "packagesPath": "C:\\Users\\higui\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\higui\\source\\repos\\EmpresaDC\\EmpresaDC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\RYZEN 3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\higui\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5790,7 +5790,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

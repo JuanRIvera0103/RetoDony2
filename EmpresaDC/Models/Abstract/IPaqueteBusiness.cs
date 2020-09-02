@@ -1,5 +1,6 @@
 ﻿using ImportacionesDC.Clases;
 using ImportacionesDC.Models.Entities;
+using Libras.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,5 +18,6 @@ namespace ImportacionesDC.Models.Abstract
         Task<IEnumerable<Transportadora>> ObtenerTransportadoras();
         Task<IEnumerable<Estado>> ObtenerEstados();
         Task<IEnumerable<TipoMercancia>> ObtenerTiposMercancia();
+        Task<Libra> ObtenerUltimaLibra();
     }
 }

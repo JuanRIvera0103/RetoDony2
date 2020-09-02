@@ -2,8 +2,8 @@
 
 @{
     ViewData["Title"] = "Detalle";
-    IEnumerable<ImportacionesDC.Models.Entities.Paquete> items =
-    (IEnumerable<ImportacionesDC.Models.Entities.Paquete>)ViewBag.Paquetes;
+    IEnumerable<ImportacionesDC.Clases.PaqueteDetalle> items =
+    (IEnumerable<ImportacionesDC.Clases.PaqueteDetalle>)ViewBag.Paquetes;
 }
 
 <h1>Details</h1>
@@ -42,45 +42,50 @@
     <thead>
         <tr>
             <th>
-                @*@Html.DisplayNameFor(model => model.Peso)*@
-                codigo
+                Codigo
             </th>
             <th>
-                @*@Html.DisplayNameFor(model => model.Casillero)*@
-                peso
+                Peso
             </th>
             <th>
-                @*@Html.DisplayNameFor(model => model.Casillero)*@
-                casillero
+                Casillero
             </th>
             <th>
-                @*@Html.DisplayNameFor(model => model.Estado)*@
-                estado
+                Estado
             </th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in items)
         {
-            <tr>
-                <td>
-                    MIA-@Html.DisplayFor(modelItem => item.Codigo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Peso)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Casillero)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Estado)
-                </td>
-                <td>
-                    <a asp-action="CrearEditar" asp-route-id="@item.Codigo" class="btn btn-outline-warning"><i class="fas fa-edit"></i> Editar</a>
-                    <a asp-action="Detalle" asp-route-id="@item.Codigo" class="btn btn-outline-primary"><i class="fas fa-search-plus"></i> Detalles</a>
-                    <a asp-action="Eliminar" onclick="return confirm('¿Estas seguro de eliminar este elemento?')" asp-route-id="@item.Codigo" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i> Eliminar</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                MIA-@Html.DisplayFor(modelItem => item.Codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Peso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Casillero)
+            </td>
+            <td>
+                @{
+                    if (item.Estado.Equals("Entregado"))
+                    {
+                        <p class="text-success">@Html.DisplayFor(modelItem => item.Estado)</p>
+                    }
+                    else
+                    {
+                        <p class="text-warning">@Html.DisplayFor(modelItem => item.Estado)</p>
+                    }
+                }
+            </td>
+            <td>
+                <a asp-controller="Paquete" asp-action="CrearEditar" asp-route-id="@item.Codigo" class="btn btn-outline-warning"><i class="fas fa-edit"></i> Editar</a>
+                <a asp-controller="Paquete" asp-action="Detalle" asp-route-id="@item.Codigo" class="btn btn-outline-primary"><i class="fas fa-search-plus"></i> Detalles</a>
+                <a asp-controller="Paquete" asp-action="Eliminar" onclick="return confirm('¿Estas seguro de eliminar este elemento?')" asp-route-id="@item.Codigo" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i> Eliminar</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
