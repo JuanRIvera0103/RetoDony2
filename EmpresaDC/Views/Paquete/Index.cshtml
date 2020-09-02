@@ -5,10 +5,6 @@
 }
 
 <h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -32,7 +28,7 @@
             </th>
         </tr>
     </thead>
-    <tbody>
+    <tbody >
 @foreach (var item in Model) {
         <tr>
             <td>
@@ -48,14 +44,24 @@
                 @Html.DisplayFor(modelItem => item.Cliente)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Estado)
+                @{
+                    if (item.Estado.Equals("Entregado"))
+                    {
+                        <p class="text-success">@Html.DisplayFor(modelItem => item.Estado)</p>
+                    }
+                    else
+                    {
+                        <p class="text-warning">@Html.DisplayFor(modelItem => item.Estado)</p>
+                    }
+                }
             </td>
-            <td>
-                <a asp-action="CrearEditar" asp-route-id="@item.Codigo" class="btn btn-outline-warning"><i class="fas fa-edit"></i> Editar</a>
-                <a asp-action="Detalle" asp-route-id="@item.Codigo" class="btn btn-outline-primary"><i class="fas fa-search-plus"></i> Detalles</a>
-                <a asp-action="Eliminar" onclick="return confirm('¿Estas seguro de eliminar este elemento?')" asp-route-id="@item.Codigo" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i> Eliminar</a>
-            </td>
-        </tr>
+                <td>
+                    <a asp-action="CrearEditar" asp-route-id="@item.Codigo" class="btn btn-outline-warning"><i class="fas fa-edit"></i> Editar</a>
+                    <a asp-action="Detalle" asp-route-id="@item.Codigo" class="btn btn-outline-primary"><i class="fas fa-search-plus"></i> Detalles</a>
+                    <a asp-action="Eliminar" onclick="return confirm('¿Estas seguro de eliminar este elemento?')" asp-route-id="@item.Codigo" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i> Eliminar</a>
+                </td>
+            </tr>
 }
     </tbody>
 </table>
+

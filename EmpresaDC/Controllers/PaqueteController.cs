@@ -45,10 +45,17 @@ namespace ImportacionesDC.Controllers
         public async Task<IActionResult> CrearEditar(int id = 0)
         {
             IEnumerable<Cliente> listaclientes = await _context.ObtenerClientes();
+            IEnumerable<Transportadora> listatransportadoras = await _context.ObtenerTransportadoras();
+            IEnumerable<Estado> listaestados = await _context.ObtenerEstados();
+            IEnumerable<TipoMercancia> listatipos = await _context.ObtenerTiposMercancia();
             ViewBag.Clientes = listaclientes;
+            ViewBag.Transportadora = listatransportadoras;
+            ViewBag.Estados = listaestados;
+            ViewBag.Tipos = listatipos;
             if (id == 0)
                 return View(new Paquete());
             else
+                ViewBag.Editar = true;
                 return View(await _context.ObtenerPaqueteId(id));
         }
 

@@ -27,15 +27,17 @@ namespace ImportacionesDC.Models.Business
                 {
                     IEnumerable<PaqueteDetalle> listaPaqueteDetalle =
                         (from paquete in _context.paquetes
-                         join cliente in _context.clientes
+                         join cliente in _context.clientes 
                          on paquete.Casillero equals cliente.NumeroCasillero
+                         join estado in _context.estados
+                         on paquete.Estado equals estado.IdEstado
                          select new PaqueteDetalle
                          {
                              Codigo = paquete.Codigo,
                              Peso = paquete.Peso,
                              Casillero = paquete.Casillero,
                              Cliente = cliente.Nombre,
-                             Estado = paquete.Estado
+                             Estado = estado.Nombre
                          }).ToList();
 
                     return (listaPaqueteDetalle);
@@ -74,6 +76,7 @@ namespace ImportacionesDC.Models.Business
 
         public async Task GuardarEditarPaquete(Paquete paquete)
         {
+
             try
             {
                 if (paquete.Codigo == 0)
@@ -108,6 +111,18 @@ namespace ImportacionesDC.Models.Business
         {
             return await _context.clientes.ToArrayAsync(); 
         }
-        
+        public async Task<IEnumerable<Transportadora>> ObtenerTransportadoras()
+        {
+            return await _context.transportadoras.ToArrayAsync();
+        }
+        public async Task<IEnumerable<Estado>> ObtenerEstados()
+        {
+            return await _context.estados.ToArrayAsync();
+        }
+        public async Task<IEnumerable<TipoMercancia>> ObtenerTiposMercancia()
+        {
+            return await _context.mercancias.ToArrayAsync();
+        }
+
     }
 }

@@ -14,5 +14,8 @@ namespace ImportacionesDC.Models.Abstract
         Task GuardarEditarPaquete(Paquete paquete);
         Task EliminarPaquete(Paquete paquete);
         Task<IEnumerable<Cliente>> ObtenerClientes();
+        Task<IEnumerable<Transportadora>> ObtenerTransportadoras();
+        Task<IEnumerable<Estado>> ObtenerEstados();
+        Task<IEnumerable<TipoMercancia>> ObtenerTiposMercancia();
     }
 }

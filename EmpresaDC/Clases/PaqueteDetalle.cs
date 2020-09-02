@@ -11,6 +11,6 @@ namespace ImportacionesDC.Clases
         public float Peso { get; set; }
         public int Casillero { get; set; }
         public string Cliente { get; set; }
-        public int Estado { get; set; }
+        public string Estado { get; set; }
     }
 }
