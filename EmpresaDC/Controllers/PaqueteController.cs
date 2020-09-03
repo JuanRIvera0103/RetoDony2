@@ -29,6 +29,18 @@ namespace ImportacionesDC.Controllers
 
         public async Task<IActionResult> Detalle(int? id)
         {
+            Cliente clientes = await _context.ObtenerClientePorId(id);
+            Transportadora transportadoras = await _context.ObtenerTransportadoraPorId(id);
+           Estado estados = await _context.ObtenerEstadoPorId(id);
+            TipoMercancia tipos = await _context.ObtenerMercanciaPorId(id);
+
+            var libra = _context.ObtenerUltimaLibra();
+
+            ViewBag.Clientes = clientes;
+            ViewBag.Transportadora = transportadoras;
+            ViewBag.Estados = estados;
+            ViewBag.Tipos = tipos;
+            ViewBag.ValorLibra = libra;
             if (id == null)
             {
                 return NotFound();
@@ -50,13 +62,13 @@ namespace ImportacionesDC.Controllers
             IEnumerable<Estado> listaestados = await _context.ObtenerEstados();
             IEnumerable<TipoMercancia> listatipos = await _context.ObtenerTiposMercancia();
 
-            var libra = await _context.ObtenerUltimaLibra();
+            Libra libra =  _context.ObtenerUltimaLibra();
 
             ViewBag.Clientes = listaclientes;
             ViewBag.Transportadora = listatransportadoras;
             ViewBag.Estados = listaestados;
             ViewBag.Tipos = listatipos;
-            ViewBag.ValorLibra = libra;
+            ViewBag.Libra = libra;
 
 
 

@@ -10,23 +10,41 @@
     <h4>Paquete</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-3">
             @Html.DisplayNameFor(model => model.Peso)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.Peso)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-3">
             @Html.DisplayNameFor(model => model.Casillero)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.Casillero)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Estado)
+        <dt class="col-sm-3">
+            Nombre del Cliente
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Estado)
+        <dd class="col-sm-9">
+            @ViewBag.Clientes.Nombre
+        </dd>
+        <dt class="col-sm-3">
+            Transportadora
+        </dt>
+        <dd class="col-sm-9">
+            @ViewBag.Transportadora.Nombre
+        </dd>
+        <dt class="col-sm-3">
+            Tipo de Mercancia
+        </dt>
+        <dd class="col-sm-9">
+            @ViewBag.Tipos.Nombre
+        </dd>
+        <dt class="col-sm-3">
+            Estado
+        </dt>
+        <dd class="col-sm-9">
+            @ViewBag.Estados.Nombre
         </dd>
     </dl>
 </div>

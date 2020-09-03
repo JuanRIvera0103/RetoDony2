@@ -18,6 +18,10 @@ namespace ImportacionesDC.Models.Abstract
         Task<IEnumerable<Transportadora>> ObtenerTransportadoras();
         Task<IEnumerable<Estado>> ObtenerEstados();
         Task<IEnumerable<TipoMercancia>> ObtenerTiposMercancia();
-        Task<Libra> ObtenerUltimaLibra();
+        Libra ObtenerUltimaLibra();
+        Task<Cliente> ObtenerClientePorId(int? id);
+        Task<Estado> ObtenerEstadoPorId(int? id);
+        Task<Transportadora> ObtenerTransportadoraPorId(int? id);
+        Task<TipoMercancia> ObtenerMercanciaPorId(int? id);
     }
 }

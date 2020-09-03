@@ -123,20 +123,48 @@ namespace ImportacionesDC.Models.Business
         {
             return await _context.mercancias.ToArrayAsync();
         }
-        //public async Task<Libra> ObtenerUltimaLibra()
-        //{
-        //    try
-        //    {
-        //        Libra libra = await _context.Libra.MaxAsync();
-        //        return libra;
+        public async Task<TipoMercancia> ObtenerMercanciaPorId(int? id)
+        {
+            Paquete paquete= await _context.paquetes.FirstOrDefaultAsync(x=>x.Codigo==id);
+            
+            TipoMercancia mercancia = await _context.mercancias.FirstOrDefaultAsync(x=>x.IdTipoMercancia==paquete.Tipo);
+            return mercancia;
+        }
+        public async Task<Transportadora> ObtenerTransportadoraPorId(int? id)
+        {
+            Paquete paquete = await _context.paquetes.FirstOrDefaultAsync(x => x.Codigo == id);
 
-        //    }
-        //    catch (Exception)
-        //    {
+            Transportadora transportadora = await _context.transportadoras.FirstOrDefaultAsync(x => x.IdTransportadora == paquete.Empresa);
+            return transportadora;
+        }
+        public async Task<Estado> ObtenerEstadoPorId(int? id)
+        {
+            Paquete paquete = await _context.paquetes.FirstOrDefaultAsync(x => x.Codigo == id);
 
-        //        throw new Exception();
-        //    }
-        //}
+            Estado estado = await _context.estados.FirstOrDefaultAsync(x => x.IdEstado == paquete.Estado);
+            return estado;
+        }
+        public async Task<Cliente> ObtenerClientePorId(int? id)
+        {
+            Paquete paquete = await _context.paquetes.FirstOrDefaultAsync(x => x.Codigo == id);
+
+            Cliente cliente = await _context.clientes.FirstOrDefaultAsync(x => x.NumeroCasillero == paquete.Casillero);
+            return cliente;
+        }
+        public Libra ObtenerUltimaLibra()
+        {
+            try
+            {
+                Libra libra = _context.Libra.OrderByDescending(x => x.IdLibra).First();
+                return libra;
+
+            }
+            catch (Exception)
+            {
+
+                throw new Exception();
+            }
+        }
 
 
 
