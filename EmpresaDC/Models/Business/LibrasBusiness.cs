@@ -46,12 +46,12 @@ namespace Libras.Models
                     Libra libreaAnterior = _context.Libra.OrderByDescending(x => x.IdLibra).First();
                     if (libreaAnterior != null)
                     {
-                        libreaAnterior.FechaFinal = DateTime.Now.ToShortDateString();
-                        libreaAnterior.HoraFinal = DateTime.Now.ToShortTimeString();
+                        libreaAnterior.FechaFinal = DateTime.Now.ToString();
+                       
                         _context.Update(libreaAnterior);
                     }
-                    libra.FechaInicio = DateTime.Now.ToShortDateString();
-                    libra.HoraInicio = DateTime.Now.ToShortTimeString();
+                    libra.FechaInicio = DateTime.Now.ToString();
+                   
                     _context.Add(libra);
                 }
                 else

@@ -13,6 +13,6 @@ namespace ImportacionesDC.Models.Abstract
         Task<Cliente> ObtenerClienteId(int? id);
         Task GuardarEditarCliente(Cliente cliente);
         Task EliminarCliente(Cliente cliente);
-        Task<IEnumerable<Paquete>> ObtenerPaquetesClienteId(int? id);
+        Task<IEnumerable<PaqueteDetalle>> ObtenerPaquetesClienteId(int? id);
     }
 }

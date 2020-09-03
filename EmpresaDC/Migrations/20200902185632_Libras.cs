@@ -13,10 +13,10 @@ namespace EmpresaDC.Migrations
                     IdLibra = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ValorLibra = table.Column<int>(nullable: false),
-                    FechaInicio = table.Column<string>(type: "nvarchar(12)", nullable: true),
-                    HoraInicio = table.Column<string>(type: "nvarchar(12)", nullable: true),
-                    FechaFinalizacion = table.Column<string>(type: "nvarchar(12)", nullable: true),
-                    HoraFinal = table.Column<string>(type: "nvarchar(10)", nullable: true)
+                    FechaInicio = table.Column<string>(type: "nvarchar(50)", nullable: true),
+                   
+                    FechaFinalizacion = table.Column<string>(type: "nvarchar(12)", nullable: true)
+                    
                 },
                 constraints: table =>
                 {

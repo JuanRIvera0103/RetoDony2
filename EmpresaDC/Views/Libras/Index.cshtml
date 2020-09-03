@@ -18,32 +18,44 @@
             <th>
                 @Html.DisplayNameFor(model => model.FechaInicio)
             </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.HoraInicio)
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.FechaFinal)
             </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.HoraFinal)
+            </th>*@
             <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ValorLibra)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FechaInicio)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FechaFinal)
-                </td>
-                <td>
-                    <a asp-action="CrearEditar" asp-route-id="@item.IdLibra">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.IdLibra">Details</a> |
-                    <a asp-action="Delete" onclick="return confirm('¿Estas seguro de eliminar este elemento?')" asp-route-id="@item.IdLibra">Delete</a>
-                   
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorLibra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInicio)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.HoraInicio)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaFinal)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.HoraFinal)
+            </td>*@
+            <td>
+                <a asp-action="CrearEditar" asp-route-id="@item.IdLibra">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdLibra">Details</a> |
+                <a asp-action="Delete" onclick="return confirm('¿Estas seguro de eliminar este elemento?')" asp-route-id="@item.IdLibra">Delete</a>
+
+            </td>
+        </tr>
         }
     </tbody>
 </table>

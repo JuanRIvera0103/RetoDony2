@@ -183,3 +183,6 @@ C:\Users\RYZEN 3\source\repos\RetoDony2\EmpresaDC\obj\Debug\netcoreapp3.1\Empres
 C:\Users\RYZEN 3\source\repos\RetoDony2\EmpresaDC\obj\Debug\netcoreapp3.1\staticwebassets\EmpresaDC.StaticWebAssets.Manifest.cache
 C:\Users\RYZEN 3\source\repos\RetoDony2\EmpresaDC\obj\Debug\netcoreapp3.1\staticwebassets\EmpresaDC.StaticWebAssets.xml
 C:\Users\RYZEN 3\source\repos\RetoDony2\EmpresaDC\obj\Debug\netcoreapp3.1\EmpresaDC.genruntimeconfig.cache
+C:\Users\higui\source\repos\EmpresaDC\EmpresaDC\obj\Debug\netcoreapp3.1\Razor\Views\Libras\CrearEditar.cshtml.g.cs
+C:\Users\higui\source\repos\EmpresaDC\EmpresaDC\obj\Debug\netcoreapp3.1\Razor\Views\Libras\Details.cshtml.g.cs
+C:\Users\higui\source\repos\EmpresaDC\EmpresaDC\obj\Debug\netcoreapp3.1\Razor\Views\Libras\Index.cshtml.g.cs

@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using ImportacionesDC.Models.DAL;
 using ImportacionesDC.Models.Entities;
 using ImportacionesDC.Models.Abstract;
+using ImportacionesDC.Clases;
 
 namespace ImportacionesDC.Controllers
 {
@@ -39,7 +40,7 @@ namespace ImportacionesDC.Controllers
             {
                 return NotFound();
             }
-            IEnumerable<Paquete> listapaquetes = await _context.ObtenerPaquetesClienteId(id);
+            IEnumerable<PaqueteDetalle> listapaquetes = await _context.ObtenerPaquetesClienteId(id);
             ViewBag.Paquetes = listapaquetes;
             return View(cliente);
         }

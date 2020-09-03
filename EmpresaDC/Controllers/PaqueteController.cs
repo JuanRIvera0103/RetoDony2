@@ -9,6 +9,7 @@ using ImportacionesDC.Models.DAL;
 using ImportacionesDC.Models.Entities;
 using ImportacionesDC.Clases;
 using ImportacionesDC.Models.Abstract;
+using Libras.Models;
 
 namespace ImportacionesDC.Controllers
 {
@@ -48,10 +49,17 @@ namespace ImportacionesDC.Controllers
             IEnumerable<Transportadora> listatransportadoras = await _context.ObtenerTransportadoras();
             IEnumerable<Estado> listaestados = await _context.ObtenerEstados();
             IEnumerable<TipoMercancia> listatipos = await _context.ObtenerTiposMercancia();
+
+            var libra = await _context.ObtenerUltimaLibra();
+
             ViewBag.Clientes = listaclientes;
             ViewBag.Transportadora = listatransportadoras;
             ViewBag.Estados = listaestados;
             ViewBag.Tipos = listatipos;
+            ViewBag.ValorLibra = libra;
+
+
+
             if (id == 0)
                 return View(new Paquete());
             else

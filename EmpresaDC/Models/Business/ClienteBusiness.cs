@@ -76,11 +76,11 @@ namespace ImportacionesDC.Models.Business
             }
         }
 
-        public async Task<IEnumerable<Paquete>> ObtenerPaquetesClienteId(int? id)
+        public async Task<IEnumerable<PaqueteDetalle>> ObtenerPaquetesClienteId(int? id)
         {
             try
             {
-                IEnumerable<Paquete> listaClienteDetalle;
+                IEnumerable<PaqueteDetalle> listaClienteDetalle;
                 listaClienteDetalle = null;
 
                 if (id == null)
@@ -96,12 +96,14 @@ namespace ImportacionesDC.Models.Business
                             join paquete in _context.paquetes
                             on client.NumeroCasillero equals paquete.Casillero
                             where client.NumeroCasillero == id
-                            select new Paquete
+                            join estado in _context.estados
+                            on paquete.Estado equals estado.IdEstado                            
+                            select new PaqueteDetalle
                             {                                
                                 Codigo = paquete.Codigo,
                                 Peso = paquete.Peso,
                                 Casillero = paquete.Casillero,
-                                Estado = paquete.Estado
+                                Estado = estado.Nombre
                             }).ToList();
 
                         return listaClienteDetalle;
